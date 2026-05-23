@@ -79,6 +79,11 @@ LIMIT 8
 - **[[Reading list]]** — books & resources
 - **[[Decisions log]]** — why I chose what I chose
 
+### Visual & output
+- **[[Portfolio.canvas|🗺️ Portfolio Canvas]]** — visual map of all work
+- **[[Résumé — Shivansh Gupta]]** — auto-generated from project notes
+- **[[GitHub sync — how it works]]** — keep the vault current with your repos
+
 ### Life / direction
 - **[[Now]]** — current focus
 - **[[Goals 2026]]** — annual targets
