@@ -32,6 +32,20 @@ repo: /Users/shivanshgupta/Documents/aistorygen
 | Email | Resend |
 | Video assembly | FFmpeg (subtitles, splicing) |
 
+## Pipeline
+```mermaid
+flowchart LR
+    Photo["📷 Child photo + theme"] --> Story["Story generation"]
+    Story --> Img["Fal.ai PuLID<br/>(face-consistent illustrations)"]
+    Img --> Vid["Grok Imagine<br/>(animate scenes)"]
+    Story --> TTS["ElevenLabs<br/>(voiceover)"]
+    Vid --> FF["FFmpeg<br/>(assemble + subtitles)"]
+    TTS --> FF
+    FF --> Out["🎬 Storybook + narrated video"]
+    Out --> S3[("AWS S3")]
+    Socket["Socket.IO"] -.live progress.-> Photo
+```
+
 ## What's special
 - **PuLID face swap** — the kid's face is rendered consistently across every illustration
 - **End-to-end orchestration** — photo + theme → storybook + animated video + voiceover, all from one prompt

@@ -27,8 +27,17 @@ license: Apache-2.0
 
 ## How it works
 A **LangGraph state machine** drives every debate through phases:
-```
-INIT → FRAMING → OPENING → CROSS-EXAMINATION → REBUTTALS → CLOSING → SYNTHESIS
+```mermaid
+stateDiagram-v2
+    [*] --> INIT
+    INIT --> FRAMING: Moderator
+    FRAMING --> OPENING: Debaters
+    OPENING --> CROSS_EXAMINATION
+    CROSS_EXAMINATION --> REBUTTALS
+    REBUTTALS --> CLOSING
+    CLOSING --> SYNTHESIS: Synthesizer
+    SYNTHESIS --> [*]
+    note right of CROSS_EXAMINATION: Fact-Checker runs each<br/>phase. State persists to<br/>Postgres (resumable, SSE stream).
 ```
 Each phase invokes the right agent (Moderator, Debater, Fact-Checker, Synthesizer) with the right context. Output streams to the browser over **SSE**. State persists to Postgres at every transition — debates are **resumable and inspectable**.
 

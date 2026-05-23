@@ -26,6 +26,19 @@ mirror: /Users/shivanshgupta/lexvault-1
 - **Real-time:** Liveblocks (co-editing)
 - **Auth:** JWT RS256 (rotating refresh tokens) + Google OAuth
 
+## Architecture — hybrid RAG with citations
+```mermaid
+flowchart LR
+    User -->|question| API["Express 4 API"]
+    API --> Embed["Embed query"]
+    Embed --> Vec[("Neon Postgres<br/>+ pgvector")]
+    Vec -->|top-k chunks| Claude["Claude<br/>(answer + cite lines)"]
+    API --> Claude
+    Claude -->|grounded answer<br/>+ line-level citations| User
+    API --> R2[("Cloudflare R2<br/>document vault")]
+    API --> Live["Liveblocks<br/>real-time co-edit"]
+```
+
 ## Core surface
 - **Contract CRUD** — rich editor (BlockNote/Tiptap)
 - **Templates** — NDA, Vendor Agreement, Consulting, Employment, MSA

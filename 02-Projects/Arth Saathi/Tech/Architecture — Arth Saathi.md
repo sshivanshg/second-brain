@@ -21,6 +21,37 @@ tags: arth-saathi, tech
 | **Hosting** | Vercel (web/admin/landing), Azure Container Apps (backend), EAS (mobile) |
 | **Observability** | Sentry, Winston structured logging, `X-Request-Id` correlation |
 
+## System diagram
+```mermaid
+flowchart TD
+    Owner["👤 Shop owner<br/>(6-inch phone)"] -->|voice / chat / WhatsApp| Web["Next.js 14 web + Expo mobile"]
+    Web --> API["Fastify + Nest backend"]
+    API --> Agent["LangGraph agent<br/>(Claude Opus)"]
+    Agent -->|proposes mutation| Card["ConfirmationCard"]
+    Card -->|owner taps Confirm| API
+    API --> DB[("PostgreSQL / RDS<br/>Prisma · paise · soft-delete")]
+    API --> Audit[("AuditLog<br/>row per mutation")]
+    API --> Razorpay["Razorpay X<br/>UPI disbursement"]
+    API --> Twilio["Twilio<br/>SMS / WhatsApp slips"]
+    Twilio -->|"Powered by Arth Saathi"| Employee["👥 Employee app<br/>(virality loop)"]
+    Employee -.referral.-> Owner
+```
+
+### Confirm-before-write sequence
+```mermaid
+sequenceDiagram
+    actor Owner
+    participant Agent as LangGraph + Claude
+    participant Tool
+    participant DB
+    Owner->>Agent: "Ramesh ki haziri laga do, aaj half day"
+    Agent->>Tool: resolve intent → call markAttendance(proposed)
+    Tool-->>Owner: ConfirmationCard (no write yet)
+    Owner->>Tool: tap Confirm
+    Tool->>DB: commit mutation + AuditLog row
+    DB-->>Owner: ✅ done
+```
+
 ## AI architecture — confirm-before-write
 1. Owner says *"Ramesh ki haziri laga do, aaj half day"*
 2. LangGraph agent resolves intent → calls tool with proposed mutation
