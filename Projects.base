@@ -1,0 +1,56 @@
+filters:
+  and:
+    - file.inFolder("02-Projects")
+    - type == "project" || type == "project-moc"
+formulas:
+  Stack: join(categories, ", ")
+  Purpose: join(audience, ", ")
+properties:
+  status:
+    displayName: Status
+  Stack:
+    displayName: Stack
+  Purpose:
+    displayName: For
+views:
+  - type: table
+    name: All projects
+    order:
+      - file.name
+      - status
+      - Purpose
+      - Stack
+    sort:
+      - property: status
+        direction: ASC
+      - property: file.name
+        direction: ASC
+    columnSize:
+      note.status: 156
+  - type: table
+    name: Active only
+    filters:
+      and:
+        - status == "active"
+    order:
+      - file.name
+      - Stack
+      - Purpose
+  - type: table
+    name: By category — AI/ML
+    filters:
+      and:
+        - categories.contains("ai-ml")
+    order:
+      - file.name
+      - status
+      - Purpose
+  - type: table
+    name: Freelance
+    filters:
+      and:
+        - audience.contains("freelance")
+    order:
+      - file.name
+      - Stack
+      - status

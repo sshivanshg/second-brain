@@ -1,0 +1,57 @@
+/* ── Second Brain polish snippet ───────────────────────────────── */
+
+/* Slightly tighter, more readable reading width */
+.markdown-preview-view,
+.markdown-source-view.mod-cm6 .cm-content {
+  --max-width: 820px;
+}
+
+/* Dashboard tables: zebra + hover for Dataview/Bases */
+.markdown-rendered table,
+.dataview.table-view-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.markdown-rendered thead th,
+.dataview.table-view-table thead th {
+  border-bottom: 2px solid var(--interactive-accent);
+  font-weight: 600;
+  text-align: left;
+}
+.markdown-rendered tbody tr:nth-child(2n),
+.dataview.table-view-table tbody tr:nth-child(2n) {
+  background: var(--background-secondary);
+}
+.markdown-rendered tbody tr:hover,
+.dataview.table-view-table tbody tr:hover {
+  background: var(--background-modifier-hover);
+}
+
+/* Inline tags as pills */
+.markdown-rendered a.tag {
+  background: var(--background-modifier-border);
+  border-radius: 10px;
+  padding: 1px 8px;
+  font-size: 0.78em;
+  text-decoration: none;
+  color: var(--text-muted);
+}
+
+/* H1 with a subtle accent underline (great for MOCs & dashboards) */
+.markdown-rendered h1 {
+  border-bottom: 2px solid var(--interactive-accent);
+  padding-bottom: 0.25em;
+}
+
+/* Blockquote one-liner summaries pop a little more */
+.markdown-rendered blockquote {
+  border-left: 3px solid var(--interactive-accent);
+  background: var(--background-secondary);
+  border-radius: 0 6px 6px 0;
+}
+
+/* Make checkboxes in dashboards a touch larger */
+.markdown-rendered input[type="checkbox"] {
+  width: 1.05em;
+  height: 1.05em;
+}

@@ -1,0 +1,13 @@
+{
+  "app:go-back": [{ "modifiers": ["Mod"], "key": "[" }],
+  "app:go-forward": [{ "modifiers": ["Mod"], "key": "]" }],
+  "daily-notes": [{ "modifiers": ["Mod", "Shift"], "key": "D" }],
+  "command-palette:open": [{ "modifiers": ["Mod"], "key": "P" }],
+  "switcher:open": [{ "modifiers": ["Mod"], "key": "O" }],
+  "global-search:open": [{ "modifiers": ["Mod", "Shift"], "key": "F" }],
+  "graph:open": [{ "modifiers": ["Mod", "Shift"], "key": "G" }],
+  "editor:toggle-source": [{ "modifiers": ["Mod"], "key": "E" }],
+  "templates:insert": [{ "modifiers": ["Mod", "Shift"], "key": "T" }],
+  "file-explorer:new-file": [{ "modifiers": ["Mod"], "key": "N" }],
+  "random-note": [{ "modifiers": ["Mod", "Shift"], "key": "R" }]
+}

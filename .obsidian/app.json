@@ -1,0 +1,18 @@
+{
+  "promptDelete": false,
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "00-Inbox",
+  "attachmentFolderPath": "Attachments",
+  "useMarkdownLinks": false,
+  "newLinkFormat": "shortest",
+  "showLineNumber": true,
+  "showInlineTitle": true,
+  "readableLineLength": true,
+  "strictLineBreaks": false,
+  "defaultViewMode": "source",
+  "livePreview": true,
+  "trashOption": "system",
+  "spellcheck": true,
+  "openBehavior": "daily"
+}

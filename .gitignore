@@ -1,0 +1,16 @@
+# Obsidian workspace state (machine-specific, noisy)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+
+# Plugin runtime data (keep configs, drop caches)
+.obsidian/plugins/*/data.json
+
+# OS cruft
+.DS_Store
+.Trash/
+.trash/
+
+# Temp
+*.tmp
+~$*

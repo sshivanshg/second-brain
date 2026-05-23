@@ -1,0 +1,16 @@
+{
+  "items": [
+    { "type": "file", "path": "Home.md", "title": "🧠 Home" },
+    { "type": "file", "path": "02-Projects/Projects MOC.md", "title": "🗺️ Projects MOC" },
+    { "type": "file", "path": "02-Projects/College projects MOC.md", "title": "🎓 College MOC" },
+    { "type": "file", "path": "02-Projects/OSS contributions.md", "title": "🌐 OSS" },
+    { "type": "file", "path": "02-Projects/Arth Saathi/Arth Saathi.md", "title": "🇮🇳 Arth Saathi" },
+    { "type": "file", "path": "02-Projects/DevHelp.md", "title": "🛠️ DevHelp" },
+    { "type": "file", "path": "02-Projects/LexVault.md", "title": "⚖️ LexVault" },
+    { "type": "file", "path": "02-Projects/RAMT — Regime-Adaptive Multimodal Transformer.md", "title": "📈 RAMT" },
+    { "type": "file", "path": "02-Projects/SpatiaLaw — WiFi CSI presence detection.md", "title": "📡 SpatiaLaw" },
+    { "type": "file", "path": "01-Notes/How to use this vault.md", "title": "📘 How to use this vault" },
+    { "type": "folder", "path": "00-Inbox", "title": "📥 Inbox" },
+    { "type": "folder", "path": "Daily", "title": "📅 Daily notes" }
+  ]
+}
