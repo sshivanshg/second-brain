@@ -58,7 +58,7 @@ tags: arth-saathi, features
 - PF auto-calc + ECR filing
 - ESI auto-calc
 - UPI salary disbursement
-- Aadhaar eKYC
+- **Aadhaar eKYC — ✅ built** (mock provider live, real provider config-gated) → [[Aadhaar eKYC — feature]]
 
 ### Q3 — Fintech expansion
 - Earned Wage Access (EWA)
@@ -85,4 +85,5 @@ PF · ESI · Professional Tax (state-wise slabs) · TDS · Form 24Q · Form 16 i
 ## Related
 - [[Architecture — Arth Saathi]]
 - [[UX principles — Arth Saathi]]
+- [[Aadhaar eKYC — feature]]
 - [[Source-of-truth pointers — Arth Saathi]]

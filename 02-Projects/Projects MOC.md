@@ -59,6 +59,8 @@ tags: moc, projects
 | [[Boutique web projects]] | Client boutique e-commerce sites |
 | [[Twitter clone]] | First-year Twitter UI clone |
 | [[Mother's Day gift site]] | Family craft project |
+| [[Dev Spirit Animal]] | 5-question quiz → shareable "dev spirit animal" card. Built to go viral. |
+| [[git wrapped — GitHub commit roast generator]] | Paste a GitHub username → brutally-funny roast of your commit history. Shareable card + OG image. Built to go viral. |
 | [[Portfolio site]] | Personal portfolio |
 
 ## 🧭 Browse by category / audience

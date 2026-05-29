@@ -31,14 +31,21 @@ domain: arthsaathi.co.in
 - [[Pricing tiers]]
 - [[GTM strategy — PLG + WhatsApp viral + CA partner]]
 - [[ICP — Priya the boutique owner]]
+- [[Vision narrative — khata to saathi]]
 
 ### 🛠️ Product
 - [[Feature catalog]]
 - [[UX principles — Arth Saathi]]
+- [[Aadhaar eKYC — feature]]
+- [[First-run walkthrough — feature]]
 
 ### 🧱 Tech
 - [[Architecture — Arth Saathi]]
 - [[Monorepo layout — Arth Saathi]]
+- [[Aadhaar KYC — implementation]]
+- [[Agent confirmation flow — fix]]
+- [[Agent attendance reliability — fix]]
+- [[Session persistence — mobile PWA stays logged in]]
 
 ### 💸 Fundraising
 - [[Pre-seed ask — USD 1.5M]]
@@ -46,6 +53,7 @@ domain: arthsaathi.co.in
 
 ### 📚 Sources
 - [[Source-of-truth pointers — Arth Saathi]]
+- [[Documentation protocol — repo ↔ vault]]
 
 ### 📓 Log
 - [[Working log — Arth Saathi]]

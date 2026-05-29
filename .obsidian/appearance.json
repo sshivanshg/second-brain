@@ -4,5 +4,7 @@
   "translucency": false,
   "nativeMenus": false,
   "showViewHeader": true,
-  "enabledCssSnippets": ["brain"]
+  "enabledCssSnippets": [
+    "brain"
+  ]
 }

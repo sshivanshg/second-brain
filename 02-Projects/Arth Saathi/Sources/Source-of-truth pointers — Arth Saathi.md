@@ -32,6 +32,7 @@ tags: arth-saathi, sources
 
 ## Architecture deep-dives
 - **GST billing & invoicing:** `/Users/shivanshgupta/Documents/arth/docs/architecture/gst-billing.md`
+- **Aadhaar eKYC:** `/Users/shivanshgupta/Documents/arth/docs/AADHAAR_KYC.md` (vault: [[Aadhaar KYC — implementation]])
 - **Schema:** `/Users/shivanshgupta/Documents/arth/apps/backend/prisma/schema.prisma`
 
 ## Audits & operational

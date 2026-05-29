@@ -1,7 +1,8 @@
 ---
-created: {{date:YYYY-MM-DD}}
+created:
+  "{ date:YYYY-MM-DD }":
 status: active
-deadline: 
+deadline:
 tags: project
 ---
 
