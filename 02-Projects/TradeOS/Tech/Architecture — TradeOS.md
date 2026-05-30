@@ -14,7 +14,7 @@ tags: tradeos, tech, architecture
 DATA SOURCES  (yfinance daily OHLCV: split-adjusted close + total-return adj_close, holdings + ^NSEI)
    │  ingestion (Python, idempotent UPSERT)
    ▼
-STORAGE       local Homebrew Postgres, db `tradeos`, table `prices(symbol,date,ohlc,adj_close,volume)`
+STORAGE       local Homebrew Postgres, db `tradeos`: `prices(symbol,date,ohlc,adj_close,volume)` + `fundamentals(symbol,period_end,revenue,…)`
    │  point-in-time reads (date <= as_of)
    ▼
 RISK ENGINE   risk.py — pure Python/pandas/numpy (the FACTS layer, deterministic, tested)
@@ -34,6 +34,7 @@ CLI           tradeos-risk  (--horizon, --as-of, --no-llm)
 - `src/tradeos/risk.py` — the quant engine (vol, EWMA covariance, component risk, VaR/CVaR, stress, liquidity, limits, horizon scaling).
 - `src/tradeos/risk_agent.py` — Claude narration (buy-side risk-manager persona, descriptive-only).
 - `src/tradeos/technical.py` — Technical agent: per-stock indicators (SMA/EMA, RSI, MACD, returns, volume) + descriptive dials.
+- `src/tradeos/fundamental.py` — Fundamental agent: quarterly revenue/earnings growth + margins (ratios only — currency-invariant) from the `fundamentals` table.
 - `src/tradeos/orchestrator.py` — multi-agent orchestrator: runs risk + technical, builds per-stock cards, parallel Claude synthesis (`tradeos-analyze`).
 - `src/tradeos/main.py` — unified `tradeos` CLI: `add` / `remove` / `holdings` (portfolio management, auto-fetch) + `ingest` / `check` / `risk` / `analyze`.
 - `src/tradeos/cli.py` — `tradeos-risk` command.
