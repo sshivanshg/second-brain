@@ -11,10 +11,10 @@ tags: tradeos, tech, architecture
 ## Layers
 
 ```
-DATA SOURCES  (yfinance: total-return adjusted daily OHLCV, holdings + ^NSEI benchmark)
+DATA SOURCES  (yfinance daily OHLCV: split-adjusted close + total-return adj_close, holdings + ^NSEI)
    │  ingestion (Python, idempotent UPSERT)
    ▼
-STORAGE       local Homebrew Postgres, db `tradeos`, table `prices(symbol,date,ohlcv)`
+STORAGE       local Homebrew Postgres, db `tradeos`, table `prices(symbol,date,ohlc,adj_close,volume)`
    │  point-in-time reads (date <= as_of)
    ▼
 RISK ENGINE   risk.py — pure Python/pandas/numpy (the FACTS layer, deterministic, tested)
