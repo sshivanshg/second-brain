@@ -33,6 +33,8 @@ CLI           tradeos-risk  (--horizon, --as-of, --no-llm)
 - `src/tradeos/check.py` — row-count verifier (`tradeos-check`).
 - `src/tradeos/risk.py` — the quant engine (vol, EWMA covariance, component risk, VaR/CVaR, stress, liquidity, limits, horizon scaling).
 - `src/tradeos/risk_agent.py` — Claude narration (buy-side risk-manager persona, descriptive-only).
+- `src/tradeos/technical.py` — Technical agent: per-stock indicators (SMA/EMA, RSI, MACD, returns, volume) + descriptive dials.
+- `src/tradeos/orchestrator.py` — multi-agent orchestrator: runs risk + technical, builds per-stock cards, parallel Claude synthesis (`tradeos-analyze`).
 - `src/tradeos/cli.py` — `tradeos-risk` command.
 - `tests/test_risk.py` — 18 tests (math validated independently + live invariants).
 - `holdings.csv` — the portfolio (symbol, quantity, avg_cost).

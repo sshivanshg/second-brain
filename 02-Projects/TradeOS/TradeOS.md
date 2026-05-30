@@ -12,7 +12,7 @@ repo: /Users/shivanshgupta/projects/tradeos
 
 > **One-liner:** a personal, multi-agent **portfolio-intelligence** system — you feed it your real holdings, a swarm of analyzer agents reads risk/technicals/earnings/macro, and it gives you a *scored, fully-traced* read of your book. Built to be **useful to me**, to **learn agentic LLM + quant systems**, and as a **hireable showcase** — explicitly *not* a product.
 
-**Status:** Active build · Phase 0 (data) ✓ · Phase 1 (Risk Agent, quant engine) ✓
+**Status:** Active build · Phase 0 (data) ✓ · Phase 1 (Risk Agent, quant engine) ✓ · Phase 2 (multi-agent core) ✓
 **Repo:** `/Users/shivanshgupta/projects/tradeos`
 **Stack:** Python + `uv` · local Homebrew Postgres · Claude API (`messages.parse` + Pydantic) · pytest
 
@@ -36,7 +36,7 @@ repo: /Users/shivanshgupta/projects/tradeos
 ## 🗺️ Roadmap (in `repo/ROADMAP.md`)
 - **Phase 0 — Data foundation** ✓ (prices in my own DB)
 - **Phase 1 — Risk Agent** ✓ (quant engine + Claude narration)
-- **Phase 2 — Multi-agent core** (technical / earnings / macro agents + orchestrator)
+- **Phase 2 — Multi-agent core** ✓ (orchestrator + Technical agent shipped; earnings / macro / sentiment agents next)
 - **Phase 3 — RAG** (concall/filing intelligence)
 - **Phase 4 — Honest eval harness** (does any signal actually predict?)
 - **Phase 5 — SvelteKit frontend** (deferred on purpose — build once, against a stable schema)

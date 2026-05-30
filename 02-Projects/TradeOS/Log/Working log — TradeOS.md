@@ -10,6 +10,10 @@ tags: tradeos, log
 
 ## 2026-05-30
 
+- **Shipped: Phase 2 — multi-agent core (orchestrator + Technical agent).** A **hand-built orchestrator** (no framework yet — build-your-own-graph first) runs the portfolio Risk agent + a new per-stock **Technical agent** (SMA 20/50/200, RSI(14) Wilder, MACD, 52-wk position, 1m/3m returns, volume trend → descriptive dials: trend / momentum / level), merges each stock's technical read with its **risk slice** into a per-stock **card ranked by risk contribution**, and synthesises a reasoning trace per card via Claude **in parallel** (`ThreadPoolExecutor`) — `messages.parse` + Pydantic `StockCard`, descriptive-only. Factual cards work with no API key; synthesis is added when one is set. New command `tradeos-analyze` (`--horizon`, `--as-of`, `--no-llm`). **26 tests green** (added indicator + orchestrator tests), ruff clean.
+  - **Pattern locked:** every analyzer agent = *pure-Python facts + optional LLM narration*; the orchestrator composes them. This is the template for the earnings / macro / sentiment agents next.
+  - **Read today:** all 5 holdings print downtrend / weak momentum (RSI 35–44), most near 52-wk lows — coherent with the adjusted-price data. INFY is both the **top risk contributor (46.6%)** *and* technically weak — exactly the two-dimensional flag the orchestrator exists to surface.
+
 - **Connected the project to the vault** — created this TradeOS space (hub + log + Tech/Sources notes + atomic beliefs) and a repo↔vault documentation protocol in `repo/CLAUDE.md` so future sessions keep this log updated. Mirrors the Arth Saathi convention.
 
 - **Shipped: horizon generalisation (`--horizon`)** — vol and VaR/CVaR can now be expressed over any horizon (d/w/m/q/y or `Nd`). → [[Estimate once, express at any horizon]]
