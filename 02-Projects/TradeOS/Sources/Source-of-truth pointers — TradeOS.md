@@ -27,12 +27,14 @@ tags: tradeos, sources
 
 ## Run cheatsheet
 ```bash
-uv run tradeos-ingest                  # pull adjusted prices for holdings + benchmark
-uv run tradeos-check                   # verify rows
-uv run tradeos-risk                    # risk read (annual) + Claude narration if key set
-uv run tradeos-risk --horizon weekly   # express vol/VaR over a week
-uv run tradeos-risk --as-of 2025-06-30 # point-in-time
-uv run pytest                          # the audit suite
+uv run tradeos add RELIANCE.NS 10 2400   # add a holding (fetches its data); editing holdings.csv works too
+uv run tradeos holdings                  # list your portfolio
+uv run tradeos remove ITC.NS
+uv run tradeos ingest                    # refresh all price data
+uv run tradeos risk --horizon weekly     # risk read (d/w/m/q/y); + Claude if ANTHROPIC_API_KEY set
+uv run tradeos analyze                   # per-stock cards (risk + technical + synthesis)
+uv run tradeos risk --as-of 2025-06-30   # point-in-time
+uv run pytest                            # the audit suite
 ```
 
 ## Secrets / config
