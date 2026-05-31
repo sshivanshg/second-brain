@@ -14,7 +14,7 @@ tags: tradeos, tech, architecture
 DATA SOURCES  (yfinance daily OHLCV: split-adjusted close + total-return adj_close, holdings + ^NSEI)
    │  ingestion (Python, idempotent UPSERT)
    ▼
-STORAGE       local Homebrew Postgres, db `tradeos`: `prices(symbol,date,ohlc,adj_close,volume)` + `fundamentals(symbol,period_end,revenue,…)`
+STORAGE       local Homebrew Postgres, db `tradeos`: `prices(symbol,date,ohlc,adj_close,volume)` + `fundamentals(symbol,period_end,revenue,…)` + `doc_chunks(symbol,source,content,embedding,period,filing_date,source_url)` (pgvector)
    │  point-in-time reads (date <= as_of)
    ▼
 RISK ENGINE   risk.py — pure Python/pandas/numpy (the FACTS layer, deterministic, tested)
