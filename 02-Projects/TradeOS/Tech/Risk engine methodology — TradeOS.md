@@ -29,7 +29,8 @@ Estimate daily, express at any horizon via **σ_T = σ_daily·√T**. Vol/VaR/CV
 - **Window misses disasters** — 2y of data has no 2008/2020, so historical VaR/CVaR *understate* true tails. (5y + EVT later.)
 - **Correlations →1 in crises** — the 0.31 avg is a calm-market number; diversification evaporates exactly when needed.
 - **Constant current weights** — replays today's weights over history, ignoring rebalancing.
-- **Conditional vol, unconditional VaR** — vol is EWMA (current regime); historical VaR uses the full-2y empirical tail. Complementary by design; Filtered Historical Simulation (scale historical returns by current/long-run vol) is the consistent Phase-4 upgrade. Covariance is unshrunk — Ledoit-Wolf when the universe grows.
+- **Two tail estimators, both reported** — plain historical VaR/CVaR is *unconditional* (full-2y empirical tail); **Filtered Historical Simulation** (`*_fhs_pct`: standardise returns by EWMA vol, rescale to today's vol) is *conditional*, tracking the current regime like the EWMA vol. Both are surfaced — complementary by design. *(Shipped — earlier logs flagged FHS as a Phase-4 to-do; it's implemented now.)*
+- **Covariance is shrunk** — EWMA covariance, then **Ledoit-Wolf shrinkage toward a constant-correlation target** (on by default, `COV_SHRINKAGE`); the intensity δ is reported in `cov_shrinkage`. δ is small at 5 names but grows in value as the universe widens. *(Also shipped since the early "unshrunk" note.)*
 
 ## Related
 - [[Architecture — TradeOS]] · [[TradeOS]] · [[Working log — TradeOS]]

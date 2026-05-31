@@ -41,7 +41,7 @@ CLI           tradeos-risk  (--horizon, --as-of, --no-llm)
 - `src/tradeos/context.py` — **`AnalysisContext`**: loads price panels + all fundamentals once, shared by every agent (no per-agent / per-symbol re-querying).
 - `src/tradeos/sources.py` — **`PriceSource` adapter** (yfinance now; bhavcopy/paid = one new class).
 - `src/tradeos/fundamental.py` — Fundamental agent + bulk `load_fundamentals` (one query for all holdings).
-- `src/tradeos/eval.py` — Phase 4 signal back-test (IC / hit-rate / tercile spread; `tradeos eval`).
+- `src/tradeos/eval.py` — Phase 4 signal back-test: **cross-sectional rank IC + ICIR + Newey-West (overlap-adjusted) t-stat**, base-rate-aware hit-rate, per-date long-short tercile spread; pooled IC kept only as a diagnostic. `tradeos eval`.
 - `src/tradeos/log.py` — central logging (quiet by default; `TRADEOS_LOG=INFO`).
 - `src/tradeos/cli.py` — `tradeos-risk` command.
 - `tests/test_risk.py` — 18 tests (math validated independently + live invariants).
