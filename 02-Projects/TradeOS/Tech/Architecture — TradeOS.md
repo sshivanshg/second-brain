@@ -14,7 +14,7 @@ tags: tradeos, tech, architecture
 DATA SOURCES  (yfinance daily OHLCV: split-adjusted close + total-return adj_close, holdings + ^NSEI)
    │  ingestion (Python, idempotent UPSERT)
    ▼
-STORAGE       local Homebrew Postgres, db `tradeos`: `prices(symbol,date,ohlc,adj_close,volume)` + `fundamentals(symbol,period_end,revenue,…)` + `doc_chunks(symbol,source,content,embedding,period,filing_date,source_url)` (pgvector)
+STORAGE       local Homebrew Postgres, db `tradeos`: `prices` + `fundamentals` + `security_meta(sector)` + `doc_chunks(…,embedding,period,filing_date,source_url)` (pgvector) + `guidance(symbol,source,period,data jsonb)`
    │  point-in-time reads (date <= as_of)
    ▼
 RISK ENGINE   risk.py — pure Python/pandas/numpy (the FACTS layer, deterministic, tested)
@@ -35,8 +35,14 @@ CLI           tradeos-risk  (--horizon, --as-of, --no-llm)
 - `src/tradeos/risk_agent.py` — Claude narration (buy-side risk-manager persona, descriptive-only).
 - `src/tradeos/technical.py` — Technical agent: per-stock indicators (SMA/EMA, RSI, MACD, returns, volume) + descriptive dials.
 - `src/tradeos/fundamental.py` — Fundamental agent: quarterly revenue/earnings growth + margins (ratios only — currency-invariant) from the `fundamentals` table.
-- `src/tradeos/orchestrator.py` — multi-agent orchestrator: runs risk + technical, builds per-stock cards, parallel Claude synthesis (`tradeos-analyze`).
-- `src/tradeos/main.py` — unified `tradeos` CLI: `add` / `remove` / `holdings` + `ingest` / `check` / `risk` / `analyze` / `docs` / `ask` / `eval`.
+- `src/tradeos/orchestrator.py` — multi-agent orchestrator: runs risk/technical/fundamental/macro, builds per-stock cards (incl. a descriptive **attention score**), parallel Claude synthesis with **cost/latency observability** (`tradeos-analyze`).
+- `src/tradeos/scoring.py` — **attention score**: deterministic 0-100 per-stock notability (NOT buy/sell) from risk/technical/fundamental/macro sub-scores; decomposable + overridable weights (hook for eval-derived weights).
+- `src/tradeos/macro.py` — **Macro agent**: sector exposure + concentration (HHI / effective sectors) from `security_meta` (FII/DII flow deferred — needs a market-data feed).
+- `src/tradeos/extraction.py` — **concall guidance extraction** (RAG retrieve → schema-constrained LLM extract with cited quotes → `guidance` table → Fundamental agent reads it).
+- `src/tradeos/rag_eval.py` — **RAG eval**: retrieval recall@k / answerable / best-distance offline (golden set in `eval/rag_golden.json`); + citation-grounding & answer-hit when a key is set (`tradeos rag-eval`).
+- `src/tradeos/trace.py` — **LLM observability** (build-your-own): per-call tokens/latency/cost → per-run summary; Langfuse-exporter-ready.
+- `src/tradeos/docs.py` — **RAG**: parse/chunk(word-boundary)/embed(fastembed)/pgvector search; cited `ask` (validated citations + relevance floor); provenance + `coverage_status`.
+- `src/tradeos/main.py` — unified `tradeos` CLI: `add` / `remove` / `holdings` · `ingest` / `check` · `risk` / `analyze` · `docs add|list|status` / `ask` / `extract` · `eval` / `rag-eval`.
 - `src/tradeos/agents.py` — **agent framework**: uniform `Agent` (`name`/`scope`/`run(ctx)`) + `REGISTRY` the orchestrator iterates.
 - `src/tradeos/context.py` — **`AnalysisContext`**: loads price panels + all fundamentals once, shared by every agent (no per-agent / per-symbol re-querying).
 - `src/tradeos/sources.py` — **`PriceSource` adapter** (yfinance now; bhavcopy/paid = one new class).
