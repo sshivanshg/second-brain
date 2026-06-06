@@ -18,7 +18,7 @@ _What does winning 2026 look like in one sentence?_
 - [ ] Ship UPI salary disbursement + Aadhaar eKYC live
 
 ## 🧠 Craft / skills
-- [ ] 
+- [ ] Become job-ready as a DevOps/Cloud engineer (2 AWS certs + portfolio) — see [[DevOps Cloud Engineer Roadmap]] 📅 2026-12-03
 - [ ] Deepen AI orchestration (LangGraph) — already a [[Tech stack map|specialty]]
 
 ## 🌐 OSS / community

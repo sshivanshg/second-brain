@@ -16,7 +16,7 @@ tags: arth-saathi, fundraising, pipeline
 
 | Investor | Firm | Stage | Check size | Last touch | Next step |
 |----------|------|-------|-----------|-----------|-----------|
-| _(add rows as you go)_ | | Researching | | | |
+| [[Artem Luko]] | Angel (solo) | Researching · track/no-ask | $25k–$3M | 2026-06-04 | Send soft-open DM + comment (no deck, no ask) |
 
 ## Pipeline by stage (from person notes)
 ```dataview

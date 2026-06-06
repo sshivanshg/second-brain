@@ -25,6 +25,8 @@ domain: arthsaathi.co.in
 - [[Market — TAM SAM SOM and growth]]
 - [[Competitors — landscape and gaps]]
 - [[Inflection triggers — why now]]
+- [[B2B data perspective — Arth Saathi]]
+- [[Multi-swarm synthesis — robustness + PMF + UA + loops]] *(2026-06-06)*
 
 ### 💰 GTM & Business
 - [[Business model — subscription + embedded fintech]]
@@ -38,6 +40,8 @@ domain: arthsaathi.co.in
 - [[UX principles — Arth Saathi]]
 - [[Aadhaar eKYC — feature]]
 - [[First-run walkthrough — feature]]
+- [[Salary advance — feature]]
+- [[Email auth — feature]]
 
 ### 🧱 Tech
 - [[Architecture — Arth Saathi]]
@@ -46,6 +50,12 @@ domain: arthsaathi.co.in
 - [[Agent confirmation flow — fix]]
 - [[Agent attendance reliability — fix]]
 - [[Session persistence — mobile PWA stays logged in]]
+- [[Mobile Google sign-in — invalid_client fix]]
+- [[Mobile ↔ web UI parity — sweep]]
+- [[Mobile sync cost — manifest-gated fast path]]
+- [[Play Store — Data safety & launch compliance map]]
+- [[Email auth — implementation]]
+- [[Backend deploy & revision health — Arth Saathi]]
 
 ### 💸 Fundraising
 - [[Pre-seed ask — USD 1.5M]]
@@ -75,6 +85,9 @@ domain: arthsaathi.co.in
 - [[Compliance integration is a structural moat]]
 - [[Daily-active surfaces own monthly-active surfaces]]
 - [[Vertical SMB-OS earns most revenue from embedded fintech]]
+- [[Offline-first sync needs tombstones, not hard deletes]]
+- [[A green deploy is not a live deploy — verify the running revision]]
+- [[Routes under a framework catch-all need a dedicated file to win]]
 
 ## 📊 Live dataview — recent Arth Saathi notes
 ```dataview

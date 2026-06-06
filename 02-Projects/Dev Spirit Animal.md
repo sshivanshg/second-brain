@@ -38,7 +38,7 @@ Started loud (neon gradient mesh). Pivoted to **minimal/editorial** per taste: w
 ## Status / next steps
 - [x] Build (quiz + 8 animals + canvas card + share/deep-link)
 - [x] Minimal aesthetic redesign
-- [ ] URL-neutralize card/footer/OG tags
+- [x] URL-neutralize card/footer/OG tags (single swappable `CARD_TAG` constant; card now reads "What's yours?")
 - [ ] Deploy to Vercel
 - [ ] (if traction) buy domain → move to Cloudflare
 

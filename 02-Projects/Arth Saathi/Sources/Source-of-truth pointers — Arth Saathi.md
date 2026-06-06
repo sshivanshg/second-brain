@@ -33,6 +33,10 @@ tags: arth-saathi, sources
 ## Architecture deep-dives
 - **GST billing & invoicing:** `/Users/shivanshgupta/Documents/arth/docs/architecture/gst-billing.md`
 - **Aadhaar eKYC:** `/Users/shivanshgupta/Documents/arth/docs/AADHAAR_KYC.md` (vault: [[Aadhaar KYC — implementation]])
+- **Salary advance (advance payment from salary):** `/Users/shivanshgupta/Documents/arth/docs/features/SALARY_ADVANCE.md` (vault: [[Salary advance — feature]])
+- **Email auth (email+password + email-OTP):** `/Users/shivanshgupta/Documents/arth/docs/features/EMAIL_AUTH.md` (vault: [[Email auth — implementation]], [[Email auth — feature]])
+- **Mobile Google sign-in runbook:** `/Users/shivanshgupta/Documents/arth/docs/features/MOBILE_GOOGLE_SIGNIN.md` (vault: [[Mobile Google sign-in — invalid_client fix]])
+- **Backend deploy (Azure/Terraform) + revision-health ops:** `/Users/shivanshgupta/Documents/arth/docs/deploy/azure-backend-terraform.md` (vault: [[Backend deploy & revision health — Arth Saathi]])
 - **Schema:** `/Users/shivanshgupta/Documents/arth/apps/backend/prisma/schema.prisma`
 
 ## Audits & operational
