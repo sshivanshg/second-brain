@@ -3,7 +3,7 @@ created: 2026-06-04
 type: architecture
 status: implemented
 tags: arth-saathi, tech, auth, otp, email, nextauth
-repo_doc: /Users/shivanshgupta/Documents/arth/docs/features/EMAIL_AUTH.md
+repo_doc: /Users/shivanshgupta/projects/arth/docs/features/EMAIL_AUTH.md
 ---
 
 # Email auth — implementation

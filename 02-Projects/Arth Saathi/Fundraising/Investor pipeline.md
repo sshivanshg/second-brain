@@ -43,8 +43,8 @@ short mode
 Supporting notes: [[Market — TAM SAM SOM and growth]] · [[Business model — subscription + embedded fintech]] · [[Inflection triggers — why now]] · [[Competitors — landscape and gaps]]
 
 ## Materials
-- Deck: `/Users/shivanshgupta/Documents/arth/Arth_Saathi_Pitch_Deck.pptx`
-- Master context: `/Users/shivanshgupta/Documents/arth/ARTH_SAATHI_CONTEXT.md`
+- Deck: `/Users/shivanshgupta/projects/arth/Arth_Saathi_Pitch_Deck.pptx`
+- Master context: `/Users/shivanshgupta/projects/arth/ARTH_SAATHI_CONTEXT.md`
 
 ## Related
 - [[Pre-seed ask — USD 1.5M]] · [[People & Network]] · [[Arth Saathi]]

@@ -3,7 +3,7 @@ created: 2026-06-04
 type: product
 status: live
 tags: arth-saathi, product, auth, onboarding
-repo_doc: /Users/shivanshgupta/Documents/arth/docs/features/EMAIL_AUTH.md
+repo_doc: /Users/shivanshgupta/projects/arth/docs/features/EMAIL_AUTH.md
 ---
 
 # Email auth — feature

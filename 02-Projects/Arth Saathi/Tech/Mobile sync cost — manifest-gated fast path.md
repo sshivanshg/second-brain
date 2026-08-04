@@ -3,7 +3,7 @@ created: 2026-06-04
 type: architecture
 status: implemented
 tags: arth-saathi, tech, mobile, sync, offline, performance, cost
-repo_doc: /Users/shivanshgupta/Documents/arth/docs/architecture/mobile-sync-manifest.md
+repo_doc: /Users/shivanshgupta/projects/arth/docs/architecture/mobile-sync-manifest.md
 ---
 
 # Mobile sync cost — manifest-gated fast path

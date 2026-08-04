@@ -3,7 +3,7 @@ created: 2026-06-03
 type: compliance
 status: closed test (Alpha) submitted for review — build vc 14
 tags: arth-saathi, tech, compliance, launch, play-store
-repo_doc: /Users/shivanshgupta/Documents/arth/docs/compliance/DATA_SAFETY.md
+repo_doc: /Users/shivanshgupta/projects/arth/docs/compliance/DATA_SAFETY.md
 ---
 
 # Play Store — Data safety & launch compliance map

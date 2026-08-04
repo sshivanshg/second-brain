@@ -16,6 +16,8 @@ _What does winning 2026 look like in one sentence?_
 - [ ] [[Arth Saathi]]: close pre-seed (USD 1.5M) — see [[Pre-seed ask — USD 1.5M]]
 - [ ] [[Arth Saathi]]: 10K paying shops
 - [ ] Ship UPI salary disbursement + Aadhaar eKYC live
+- [ ] [[Deskzy]]: grow paying Pro seats + multi-link/API revenue; keep deskzy.xyz reliable
+- [ ] [[Buildy — NewsFeed]]: pilot 1 city QR loop (scan → feed → WhatsApp share → return visit)
 
 ## 🧠 Craft / skills
 - [ ] Become job-ready as a DevOps/Cloud engineer (2 AWS certs + portfolio) — see [[DevOps Cloud Engineer Roadmap]] 📅 2026-12-03
@@ -38,6 +40,8 @@ _What does winning 2026 look like in one sentence?_
 |------|----------------------|
 | Close pre-seed | [[Arth Saathi]], [[Investor pipeline]] |
 | 10K shops | [[Arth Saathi]] |
+| Deskzy revenue | [[Deskzy]], [[tg-promo]] |
+| NewsFeed pilot | [[Buildy — NewsFeed]] |
 | OSS merge | [[OSS contributions]] |
 
 ## Quarterly check-ins

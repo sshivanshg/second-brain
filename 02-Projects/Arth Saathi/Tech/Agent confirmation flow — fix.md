@@ -3,7 +3,7 @@ created: 2026-05-25
 type: architecture
 status: implemented
 tags: arth-saathi, tech, ai, agent, ux
-repo_doc: /Users/shivanshgupta/Documents/arth/docs/AI/AGENT_CONFIRMATION_FLOW.md
+repo_doc: /Users/shivanshgupta/projects/arth/docs/AI/AGENT_CONFIRMATION_FLOW.md
 ---
 
 # Agent confirmation flow — fix

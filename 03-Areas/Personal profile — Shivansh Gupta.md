@@ -29,7 +29,7 @@ Currently shipping a portfolio of real products in parallel:
 
 ## Working style preferences
 - Move fast, don't pause to ask
-- Auto-approve everything in agent work (see `/Users/shivanshgupta/Documents/arth/CLAUDE.md` for the autonomous agent mode I use)
+- Auto-approve everything in agent work (see `/Users/shivanshgupta/projects/arth/CLAUDE.md` for the autonomous agent mode I use)
 - Hinglish / casual prose in messages — terse but high-signal
 - Wants concrete output, not plans
 

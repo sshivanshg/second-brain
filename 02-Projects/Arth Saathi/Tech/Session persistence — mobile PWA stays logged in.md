@@ -4,7 +4,7 @@ updated: 2026-05-31
 type: architecture
 status: implemented
 tags: arth-saathi, tech, auth, session, pwa, mobile, ux
-repo_doc: /Users/shivanshgupta/Documents/arth/docs/features/SESSION_PERSISTENCE.md
+repo_doc: /Users/shivanshgupta/projects/arth/docs/features/SESSION_PERSISTENCE.md
 ---
 
 # Session persistence — mobile PWA stays logged in

@@ -17,6 +17,7 @@ Heavy interest signal — multiple CNCF Graduated/Incubating projects forked in 
 | [kyverno](https://github.com/sshivanshg/kyverno) | CNCF | Cloud-native policy management |
 | [antrea](https://github.com/sshivanshg/antrea) | CNCF | K8s networking on Open vSwitch |
 | [prometheus-operator](https://github.com/sshivanshg/prometheus-operator) | Prometheus | Prometheus on K8s |
+| **[[Flatcar OSS]]** / [Flatcar](https://github.com/sshivanshg/Flatcar) | CNCF | Immutable container host OS — local clone + learning (`~/Projects/Flatcar`, active Jul 2026) |
 
 ## ₿ Bitcoin Core (BOSS 2026 Challenge)
 GitHub Classroom challenges — focused, time-boxed Bitcoin protocol work:

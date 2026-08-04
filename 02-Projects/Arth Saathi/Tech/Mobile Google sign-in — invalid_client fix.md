@@ -3,7 +3,7 @@ created: 2026-06-03
 type: architecture
 status: implemented
 tags: arth-saathi, tech, mobile, auth, oauth
-repo_doc: /Users/shivanshgupta/Documents/arth/docs/features/MOBILE_GOOGLE_SIGNIN.md
+repo_doc: /Users/shivanshgupta/projects/arth/docs/features/MOBILE_GOOGLE_SIGNIN.md
 ---
 
 # Mobile Google sign-in — invalid_client fix

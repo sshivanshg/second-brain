@@ -48,7 +48,7 @@ status: open
 - Khatabook — 10M MAU, couldn't monetize → why we're different
 
 ## Status
-Pitch deck at: `/Users/shivanshgupta/Documents/arth/Arth_Saathi_Pitch_Deck.pptx`
+Pitch deck at: `/Users/shivanshgupta/projects/arth/Arth_Saathi_Pitch_Deck.pptx`
 
 ## Related
 - [[Business model — subscription + embedded fintech]]

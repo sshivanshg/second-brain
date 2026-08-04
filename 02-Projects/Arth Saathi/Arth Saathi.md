@@ -5,7 +5,7 @@ type: project-moc
 tags: project, startup, arth-saathi
 categories: [fullstack, ai-ml]
 audience: [startup]
-repo: /Users/shivanshgupta/Documents/arth
+repo: /Users/shivanshgupta/projects/arth
 domain: arthsaathi.co.in
 ---
 
@@ -14,7 +14,7 @@ domain: arthsaathi.co.in
 > **One-liner:** AI-first, Hindi/Hinglish-conversational operating system for India's 5–50 employee shops — replacing the notebook, the WhatsApp group, and the harassed CA with a single app the owner *talks to* on a 6-inch phone.
 
 **Status:** Live pilot, <100 paying shops · Pre-seed/Seed open · Founder: Shivansh Gupta
-**Repo:** `/Users/shivanshgupta/Documents/arth`
+**Repo:** `/Users/shivanshgupta/projects/arth`
 **Stack:** Next.js 14 + Fastify + Prisma/Postgres + Expo (RN) + LangGraph (Claude)
 
 ## 🧭 Quick nav
@@ -52,7 +52,9 @@ domain: arthsaathi.co.in
 - [[Session persistence — mobile PWA stays logged in]]
 - [[Mobile Google sign-in — invalid_client fix]]
 - [[Mobile ↔ web UI parity — sweep]]
+- [[Mobile offline-first + motion overhaul — Arth Saathi]]
 - [[Mobile sync cost — manifest-gated fast path]]
+- [[Mobile app audit — 2026-06]]
 - [[Play Store — Data safety & launch compliance map]]
 - [[Email auth — implementation]]
 - [[Backend deploy & revision health — Arth Saathi]]
@@ -87,6 +89,7 @@ domain: arthsaathi.co.in
 - [[Vertical SMB-OS earns most revenue from embedded fintech]]
 - [[Offline-first sync needs tombstones, not hard deletes]]
 - [[A green deploy is not a live deploy — verify the running revision]]
+- [[Liveness can't catch a wedged dependency — readiness needs a watchdog]]
 - [[Routes under a framework catch-all need a dedicated file to win]]
 
 ## 📊 Live dataview — recent Arth Saathi notes

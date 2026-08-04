@@ -2,12 +2,12 @@
 created: 2026-05-24
 type: reference
 tags: arth-saathi, sources, meta, ai-workflow
-repo_enforcer: /Users/shivanshgupta/Documents/arth/CLAUDE.md
+repo_enforcer: /Users/shivanshgupta/projects/arth/CLAUDE.md
 ---
 
 # Documentation protocol — repo ↔ vault
 
-> **The deal:** the **repo holds truth**, the **vault holds thinking**. Code, specs, migrations, and `.env` live in `/Users/shivanshgupta/Documents/arth`. This vault holds the *why*, the *map*, and the *narrative* — linked, atomic, durable. This note is the bridge between them and the rule for keeping them in sync.
+> **The deal:** the **repo holds truth**, the **vault holds thinking**. Code, specs, migrations, and `.env` live in `/Users/shivanshgupta/projects/arth`. This vault holds the *why*, the *map*, and the *narrative* — linked, atomic, durable. This note is the bridge between them and the rule for keeping them in sync.
 
 This protocol is **enforced from the repo**: `CLAUDE.md` instructs every Claude Code session to update this vault when it ships product/tech work. So "AI documents everything here" is automatic, not a chore. See `repo_enforcer` above.
 

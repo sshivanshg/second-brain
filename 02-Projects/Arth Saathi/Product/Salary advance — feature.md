@@ -3,7 +3,7 @@ created: 2026-05-31
 type: product
 status: built — backend + web + mobile + employee self-view + AI agent
 tags: arth-saathi, features, payroll, fintech
-repo_doc: /Users/shivanshgupta/Documents/arth/docs/features/SALARY_ADVANCE.md
+repo_doc: /Users/shivanshgupta/projects/arth/docs/features/SALARY_ADVANCE.md
 ---
 
 # Salary advance — feature

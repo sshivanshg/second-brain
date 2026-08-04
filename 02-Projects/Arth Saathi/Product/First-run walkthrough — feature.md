@@ -3,7 +3,7 @@ created: 2026-05-27
 type: product
 status: built — web (owner) + mobile (owner + employee)
 tags: arth-saathi, features, onboarding, ux
-repo_doc: /Users/shivanshgupta/Documents/arth/docs/WALKTHROUGH.md
+repo_doc: /Users/shivanshgupta/projects/arth/docs/WALKTHROUGH.md
 ---
 
 # First-run walkthrough — feature

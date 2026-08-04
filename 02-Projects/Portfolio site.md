@@ -1,30 +1,30 @@
 ---
 created: 2026-05-24
+updated: 2026-08-04
 status: active
 type: project
 tags: project, portfolio, marketing
 categories: [frontend]
 audience: [personal]
-repo: /Users/shivanshgupta/my_portfolio
+repo: /Users/shivanshgupta/Projects/shivansh-protfolio-main
+github: https://github.com/sshivanshg/shivansh-protfolio-main
+legacy_repo: /Users/shivanshgupta/Projects/my_portfolio
 ---
 
 # 🌐 Portfolio site
 
-> **One-liner:** Personal portfolio. Next.js 14 + Tailwind. Default `create-next-app` scaffold customized.
+> **One-liner:** Personal portfolio — folder-style desktop layout, deliberate edge-gesture section changes, projects default to **All** tab; X (@sshivanshg) in socials.
 
-**Repo:** `/Users/shivanshgupta/my_portfolio`
+## Canonical (current)
+- **Path:** `/Users/shivanshgupta/Projects/shivansh-protfolio-main`
+- **GitHub:** [sshivanshg/shivansh-protfolio-main](https://github.com/sshivanshg/shivansh-protfolio-main)
+- **Last work:** 2026-07-19 — scroll/folder layout fixes, mobile layout, socials
 
-## Stack
-- Next.js (App Router)
-- create-next-app baseline
-- Tailwind (assumed)
+## Legacy
+- `/Users/shivanshgupta/Projects/my_portfolio` (older Next scaffold, Jan 2026)
+- Other variants on GitHub: `shivansh-portfolio`, `PortfolioM`, `ai_portfolio`, `AI-Portfolio-Remastered`, `sshivanshg` profile README
 
-## Portfolio variants on GitHub
-You've iterated on the portfolio many times. All variants:
-`my_portfolio`, `shivansh-portfolio`, `PortfolioM`, `ai_portfolio`, `ai-portfolio`, `AI-Portfolio-Remastered`, `ShivAnsh`, `sshivanshg` (GitHub profile README), `resume-webpage-template`.
+> Prefer one public URL; generate résumé content from [[Résumé — Shivansh Gupta]] / this vault.
 
-> Consider consolidating to ONE canonical portfolio and archiving the rest — see [[Résumé — Shivansh Gupta]] which is generated from this vault.
-
-## Connections
-- [[Projects MOC]] · [[Frontend projects]]
-- [[Résumé — Shivansh Gupta]]
+## 🔗 Connections
+- [[Projects MOC]] · [[Frontend projects]] · [[Résumé — Shivansh Gupta]]

@@ -3,7 +3,7 @@ created: 2026-05-24
 type: product
 status: built — mock provider live, real provider pending
 tags: arth-saathi, features, compliance, kyc
-repo_doc: /Users/shivanshgupta/Documents/arth/docs/AADHAAR_KYC.md
+repo_doc: /Users/shivanshgupta/projects/arth/docs/AADHAAR_KYC.md
 ---
 
 # Aadhaar eKYC — feature

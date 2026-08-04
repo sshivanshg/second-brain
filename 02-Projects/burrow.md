@@ -1,19 +1,29 @@
 ---
 created: 2026-05-29
+updated: 2026-08-04
 status: active
 type: project
 tags: project, cli, bun, devtool
 categories: [devtool, systems]
 audience: [personal]
 repo: /Users/shivanshgupta/Projects/burrow
-package: burrow
+github: https://github.com/sshivanshg/burrowed
+package: burrowed
+version: 0.3.1
 ---
 
-# 🐹 burrow
+# 🐹 burrow → burrowed
 
-> **One-liner:** A [Mole](https://github.com/tw93/Mole)-inspired CLI that scans for dev junk (`node_modules`, `.next`, caches, build artifacts) and reclaims disk space — interactive and safe-by-default.
+> **One-liner:** Mole-inspired macOS cleaner CLI — reclaim disk from caches, DerivedData, duplicates, dormant apps; animated mole TUI. **Shipped as `burrowed` v0.3.1** via Homebrew.
 
-**Repo:** `/Users/shivanshgupta/Projects/burrow` · **Package:** `burrow` · **Binary:** `~/.local/bin/burrow` (on PATH)
+**Repo:** `/Users/shivanshgupta/Projects/burrow` · **GitHub:** [sshivanshg/burrowed](https://github.com/sshivanshg/burrowed) · **Install:** `brew tap sshivanshg/burrowed && brew install burrowed`
+
+## 📝 Log
+### 2026-06-04
+- Renamed project burrow → **burrowed**; release pipeline + Homebrew formula
+- v0.3.0 → **v0.3.1** (menu ghost-frame fix, score badge spacing)
+### 2026-08-04
+- Local dirty: `docker.ts`, `dormant-apps.ts` cleaners — uncommitted polish
 
 ## 🎯 Goal
 A one-command way to find and delete reclaimable dev junk across my projects, without ever risking real source/data.

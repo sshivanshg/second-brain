@@ -2,7 +2,7 @@
 created: 2026-05-28
 type: product
 tags: arth-saathi, gtm, vision, narrative
-repo_doc: /Users/shivanshgupta/Documents/arth/docs/product/Arth_Saathi_Vision.md
+repo_doc: /Users/shivanshgupta/projects/arth/docs/product/Arth_Saathi_Vision.md
 ---
 
 # Vision narrative — khata to saathi

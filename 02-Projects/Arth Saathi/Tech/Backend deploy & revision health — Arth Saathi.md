@@ -2,8 +2,8 @@
 created: 2026-06-04
 type: architecture
 status: implemented
-tags: arth-saathi, tech, devops, deploy, azure, vercel, ci
-repo_doc: /Users/shivanshgupta/Documents/arth/docs/deploy/azure-backend-terraform.md
+tags: arth-saathi, tech, devops, deploy, azure, vercel, ci, reliability, incident, rds
+repo_doc: /Users/shivanshgupta/projects/arth/docs/deploy/azure-backend-terraform.md
 ---
 
 # Backend deploy & revision health — Arth Saathi
@@ -25,6 +25,27 @@ Look for `Healthy` / `Running` / `replicas:1` on the **newest** revision. `Activ
 Direct-curl the backend (bypasses Next/Vercel) to compare an old vs new route:
 `https://arth-prod-backend.ashyriver-955dc28b.centralindia.azurecontainerapps.io`
 Failed-revision crash logs are in Log Analytics: `ContainerAppConsoleLogs_CL | where RevisionName_s == 'arth-prod-backend--00000NN'`.
+
+## The second lie: a **Healthy** revision is **not** a *serving* revision (the 2-day outage, 2026-06-13)
+Found the prod backend fully down — every public request hung with **HTTP 000** (timeout), *not* a 5xx — yet `az containerapp revision list` showed the revision **Healthy / Running / replicas:1** and the database was perfectly fine. It had been down **~2 days, unnoticed**.
+
+**Root cause: a wedged Prisma connection pool on the single always-on replica.** The DB (external **AWS RDS** `database-me`, ap-south-1, `create_postgres=false`), credentials, TLS, network, *and* the Key Vault `database-url` secret were all healthy the whole time — proven by running `psql "…?sslmode=require" -c "select 1"` straight from the Mac (connected, returned `ok` in <1s) and by RDS being publicly reachable (TCP 5432 open). But inside the container every query hung and **RDS showed 0 sessions** — the worker never opened a single connection. The 2s *hang* (not an instant reject) = a connection-level stall, masked because Prisma silently retries connect before the `/ready` 2s race fires.
+
+**Why it stayed down for days — the probe topology (this is the trap):**
+- **Liveness → `/health`** is dependency-free, so it stayed **green** → the container was **never restarted**.
+- **Readiness → `/ready`** runs `SELECT 1`, so it failed forever → the replica was pulled from the load balancer → with `aca_min_replicas=1`, the *one* replica served nothing and nothing rescued it.
+- Net: ingress had **zero ready replicas → it blackholed every request**, so even dependency-free `/health` was unreachable *externally* (the 000), though it would answer *inside* the container. A readiness probe that can fail permanently, with a liveness probe that can't catch the same condition, = a wedged-but-alive process that sits dead forever.
+
+**Recovery runbook (restores in <1 min):** just restart the wedged revision → fresh container → fresh pool → reconnects.
+```
+az containerapp revision restart -n arth-prod-backend -g arth-prod-rg --revision arth-prod-backend--00000NN
+```
+
+**Permanent guards (shipped PR #48 → revision 0000092):**
+- **DB watchdog** — `apps/backend/src/server/db-watchdog.ts`, started in `main.ts` after `listen()`. Periodic `SELECT 1`; after a *sustained* unreachable window (default **5 min**; tune `DB_WATCHDOG_INTERVAL_MS` / `_PROBE_TIMEOUT_MS` / `_GRACE_MS`; disable with `DB_WATCHDOG_ENABLED=false`) it calls **`process.exit(1)`** so ACA restarts with a fresh pool — same exit-and-restart philosophy as the existing `unhandledRejection`/`uncaughtException` handlers. Stopped in the graceful-shutdown path so a deploy/drain doesn't trip it. Trade-off: during a *genuine* prolonged DB outage it restart-loops (harmless — the app can't serve anyway, and the alert fires).
+- **Uptime alert** — `.github/workflows/uptime.yml`, cron `*/5 * * * *`, curls public `/health` + `/ready` (3 attempts each); a red run emails the repo owner. Target overridable via repo var `BACKEND_HEALTH_URL`. **Detection was the real gap** — this turns a 2-day silent outage into a ~5-min email.
+
+**Diagnostic leverage for next time:** the failure logs only as `"check failed db ready check timed out","module":"bootstrap"` every 10s — *that exact line means this worker can't reach the DB*, not that the DB is down. Verify the DB independently (psql from outside) **before** touching infra; if the DB is fine, the container is wedged → restart it. Inspecting the secret needs a temporary `Key Vault Secrets User` grant on vault `arthprodkv181owa` for your own az identity (the app reads it via its managed identity, so your personal login is `ForbiddenByRbac` by default) — **revoke the grant after**.
 
 ## Trap 1 — corepack auto-upgrades pnpm and crashes the Node 20 container
 `Dockerfile.nestjs` runs `CMD ["pnpm","server:start"]`. With **no `packageManager` field in the runner's working dir**, corepack downloads the **latest** pnpm (v11, requires **Node 22**) at startup and dies on the Node 20 image: `ERR_UNKNOWN_BUILTIN_MODULE: node:sqlite`. A time bomb — it only detonated once pnpm's "latest" crossed into Node-22 territory, so the *first* new deploy after that failed while the long-running old revision kept working.

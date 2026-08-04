@@ -3,7 +3,7 @@ created: 2026-05-24
 type: architecture
 status: implemented (mock provider) — real provider config-gated
 tags: arth-saathi, tech, compliance, kyc
-repo_doc: /Users/shivanshgupta/Documents/arth/docs/AADHAAR_KYC.md
+repo_doc: /Users/shivanshgupta/projects/arth/docs/AADHAAR_KYC.md
 ---
 
 # Aadhaar KYC — implementation

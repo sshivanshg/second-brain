@@ -3,7 +3,7 @@ created: 2026-06-02
 type: architecture
 status: implemented
 tags: arth-saathi, tech, mobile, design-system, dark-mode, ux
-repo_doc: /Users/shivanshgupta/Documents/arth/docs/audits/MOBILE_WEB_UI_PARITY.md
+repo_doc: /Users/shivanshgupta/projects/arth/docs/audits/MOBILE_WEB_UI_PARITY.md
 ---
 
 # Mobile ↔ web UI parity — sweep

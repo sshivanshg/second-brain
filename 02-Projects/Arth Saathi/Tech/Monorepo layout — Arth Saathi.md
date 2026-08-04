@@ -6,7 +6,7 @@ tags: arth-saathi, tech
 
 # Monorepo layout — Arth Saathi
 
-**Repo:** `/Users/shivanshgupta/Documents/arth` · **Manager:** pnpm workspaces
+**Repo:** `/Users/shivanshgupta/projects/arth` · **Manager:** pnpm workspaces
 
 ## Apps
 
